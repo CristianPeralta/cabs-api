@@ -7,13 +7,13 @@ import {
   Where,
 } from '@loopback/repository';
 import {
-  post,
-  param,
+  del,
   get,
   getModelSchemaRef,
+  param,
   patch,
+  post,
   put,
-  del,
   requestBody,
 } from '@loopback/rest';
 import {Rider} from '../models';
@@ -22,7 +22,7 @@ import {RiderRepository} from '../repositories';
 export class RiderController {
   constructor(
     @repository(RiderRepository)
-    public riderRepository : RiderRepository,
+    public riderRepository: RiderRepository,
   ) {}
 
   @post('/riders', {
@@ -57,9 +57,7 @@ export class RiderController {
       },
     },
   })
-  async count(
-    @param.where(Rider) where?: Where<Rider>,
-  ): Promise<Count> {
+  async count(@param.where(Rider) where?: Where<Rider>): Promise<Count> {
     return this.riderRepository.count(where);
   }
 
@@ -78,9 +76,7 @@ export class RiderController {
       },
     },
   })
-  async find(
-    @param.filter(Rider) filter?: Filter<Rider>,
-  ): Promise<Rider[]> {
+  async find(@param.filter(Rider) filter?: Filter<Rider>): Promise<Rider[]> {
     return this.riderRepository.find(filter);
   }
 
@@ -120,7 +116,8 @@ export class RiderController {
   })
   async findById(
     @param.path.string('id') id: string,
-    @param.filter(Rider, {exclude: 'where'}) filter?: FilterExcludingWhere<Rider>
+    @param.filter(Rider, {exclude: 'where'})
+    filter?: FilterExcludingWhere<Rider>,
   ): Promise<Rider> {
     return this.riderRepository.findById(id, filter);
   }

@@ -4,6 +4,13 @@ import {Entity, model, property} from '@loopback/repository';
 export class Rider extends Entity {
   @property({
     type: 'string',
+    id: true,
+    generated: true,
+  })
+  id?: string;
+
+  @property({
+    type: 'string',
     required: true,
   })
   name: string;
@@ -38,9 +45,8 @@ export class Rider extends Entity {
 
   @property({
     type: 'string',
-    required: true,
   })
-  paymentType: string;
+  paymentType?: string;
 
 
   constructor(data?: Partial<Rider>) {

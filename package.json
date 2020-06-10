@@ -54,15 +54,17 @@
     "@loopback/rest-explorer": "^2.2.3",
     "@loopback/service-proxy": "^2.3.1",
     "loopback-connector-mongodb": "^5.2.3",
+    "mongodb": "^3.5.8",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@loopback/build": "^5.4.2",
-    "source-map-support": "^0.5.19",
-    "@loopback/testlab": "^3.1.6",
-    "@types/node": "^10.17.24",
     "@loopback/eslint-config": "^8.0.0",
+    "@loopback/testlab": "^3.1.6",
+    "@types/mongodb": "^3.5.20",
+    "@types/node": "^10.17.24",
     "eslint": "^7.1.0",
+    "source-map-support": "^0.5.19",
     "typescript": "~3.9.3"
   }
 }
